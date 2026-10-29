@@ -1,302 +1,487 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的导航页</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url('http://files.unn.pp.ua/download/pictures%2Fbackground.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        
-        .header {
-            color: #fff;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        
-        .search-container {
-            padding: 3rem;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto 20px;
-        }
-        
-        .search-box {
-            width: 100%;
-            padding: 15px 18px;
-            font-size: 20px;
-            border: none;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 12px;
-        }
-        
-        .link-item {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            padding: 12px;
-            transition: all 0.2s;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            height: 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .link-item:hover {
-            background-color: rgba(255, 255, 255, 0.85);
-            transform: translateY(-2px);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-        }
-        
-        .link-item a {
-            text-decoration: none;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            justify-content: center;
-        }
-        
-        .link-icon {
-            width: 24px;
-            height: 24px;
-            margin-bottom: 8px;
-            object-fit: contain;
-        }
-        
-        .link-text {
-            font-size: 14px;
-            text-align: center;
-            word-break: break-word;
-            max-width: 100%;
-        }
-        .foot_marker {
-            position: fixed;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            width: 100%;
-            text-align: center;
-            font-size: 12px;
-            color: rgba(255,255,255,0.8);
-            z-index: 999;
-            padding: 10px 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>丝绒笔触 · 专业化妆刷</title>
+  <!-- 纯HTML/CSS，无JS，优雅的化妆刷展示网站 -->
+  <style>
+    /* 全局重置与字体 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .foot_marker a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            padding: 5px 10px;
-            border-radius: 15px;
-        }
+    body {
+      background-color: #faf7f5;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      color: #2e2e2e;
+      line-height: 1.6;
+    }
 
-        .foot_marker a:hover {
-            color: #4388e0;
-        }        
-    </style>
+    /* 整体布局容器 */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* 页眉 */
+    header {
+      background: #ffffff;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid #f0e7e0;
+      padding: 1.2rem 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 300;
+      letter-spacing: 4px;
+      color: #4a3b2c;
+      text-transform: uppercase;
+      border-left: 4px solid #d9b8a4;
+      padding-left: 1.2rem;
+    }
+
+    .logo span {
+      font-weight: 600;
+      color: #b28b6f;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #5e4f41;
+      margin-left: 2rem;
+      font-weight: 400;
+      font-size: 1.05rem;
+      transition: color 0.2s;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 0.3rem;
+    }
+
+    nav a:hover {
+      color: #b28b6f;
+      border-bottom-color: #d9b8a4;
+    }
+
+    /* 主视觉区域 */
+    .hero {
+      background: linear-gradient(135deg, #f5efe8 0%, #efe3d9 100%);
+      padding: 4rem 0;
+      margin-bottom: 3rem;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 1.2;
+      color: #3a2e24;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text h1 strong {
+      font-weight: 600;
+      color: #9b7b62;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #5e4f41;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #b28b6f;
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: background 0.3s, transform 0.2s;
+      border: none;
+      cursor: default;
+      box-shadow: 0 6px 12px rgba(178, 139, 111, 0.2);
+    }
+
+    .btn:hover {
+      background-color: #9b7b62;
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .hero-image .brush-icon {
+      font-size: 12rem;
+      line-height: 1;
+      color: #d9b8a4;
+      filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.05));
+    }
+
+    /* 产品展示区标题 */
+    .section-title {
+      text-align: center;
+      margin: 3.5rem 0 2.5rem;
+      font-size: 2.2rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      color: #4a3b2c;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 2px;
+      background: #d9b8a4;
+      margin: 1rem auto 0;
+    }
+
+    /* 产品网格 */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .product-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 1.5rem 2rem;
+      box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      text-align: center;
+      border: 1px solid #f3ece6;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.1);
+      border-color: #e7d9cf;
+    }
+
+    /* 刷子视觉表示 (使用emoji/字符组合，纯CSS刷子) */
+    .brush-visual {
+      font-size: 4.5rem;
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2rem;
+      color: #b28b6f;
+    }
+
+    .brush-handle {
+      color: #5e4f41;
+    }
+
+    .product-card h3 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #3a2e24;
+    }
+
+    .product-desc {
+      font-size: 0.95rem;
+      color: #7a6b5d;
+      margin-bottom: 1.2rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #9b7b62;
+      letter-spacing: 1px;
+    }
+
+    .price small {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #b8a99b;
+    }
+
+    /* 特色区域 */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      background: #ffffff;
+      padding: 3rem 2rem;
+      border-radius: 40px;
+      margin: 3rem 0 4rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      border: 1px solid #f3ece6;
+    }
+
+    .feature-item {
+      flex: 1 1 200px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 2.8rem;
+      margin-bottom: 0.8rem;
+      color: #b28b6f;
+    }
+
+    .feature-item h4 {
+      font-weight: 500;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #4a3b2c;
+    }
+
+    .feature-item p {
+      color: #7a6b5d;
+      font-size: 0.95rem;
+    }
+
+    /* 品牌故事/宣言 */
+    .brand-story {
+      background: #f5efe8;
+      border-radius: 48px;
+      padding: 3.5rem 3rem;
+      margin: 3rem 0 4rem;
+      text-align: center;
+      border: 1px solid #e7d9cf;
+    }
+
+    .brand-story p {
+      font-size: 1.4rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #4a3b2c;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .brand-story .signature {
+      margin-top: 1.8rem;
+      font-style: normal;
+      font-weight: 500;
+      color: #9b7b62;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* 页脚 */
+    footer {
+      background: #ffffff;
+      border-top: 1px solid #f0e7e0;
+      padding: 2.5rem 0;
+      margin-top: 3rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      color: #7a6b5d;
+    }
+
+    .footer-links a {
+      color: #7a6b5d;
+      text-decoration: none;
+      margin-right: 2rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #b28b6f;
+    }
+
+    .copyright {
+      letter-spacing: 0.5px;
+    }
+
+    /* 分隔线 */
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #e7d9cf, transparent);
+      margin: 1rem 0;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 700px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 1.5rem;
+      }
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+      .hero-image .brush-icon {
+        font-size: 8rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .brand-story p {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="search-container">
-        <form action="https://www.google.com/search" method="get" target="_blank">
-            <input class="search-box" type="text" name="q" placeholder="Google 搜索...">
-        </form>
-    </div>
-    
-    <div class="container">
-        <!-- 第一行 -->
-        <div class="link-item">
-            <a href="https://www.google.com" target="_blank">
-                <img class="link-icon" src="https://www.google.com/favicon.ico" alt="Google">
-                <span class="link-text">Google</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.baidu.com" target="_blank">
-                <img class="link-icon" src="https://www.baidu.com/favicon.ico" alt="Baidu">
-                <span class="link-text">Baidu</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.youtube.com" target="_blank">
-                <img class="link-icon" src="https://www.youtube.com/favicon.ico" alt="YouTube">
-                <span class="link-text">Youtube</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://mail.google.com/mail/u/0/" target="_blank">
-                <img class="link-icon" src="https://mail.google.com/favicon.ico" alt="Gmail">
-                <span class="link-text">Gmail</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://github.com" target="_blank">
-                <img class="link-icon" src="https://github.com/favicon.ico" alt="GitHub">
-                <span class="link-text">GitHub</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://ip.sb" target="_blank">
-                <img class="link-icon" src="https://ip.sb/favicon.ico" alt="IP SB">
-                <span class="link-text">ip.sb</span>
-            </a>
-        </div>
-        
-        <!-- 第二行 -->
-        <div class="link-item">
-            <a href="https://dash.cloudflare.com" target="_blank">
-                <img class="link-icon" src="https://www.cloudflare.com/favicon.ico" alt="Cloudflare">
-                <span class="link-text">Cloudflare</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://chat.openai.com" target="_blank">
-                <img class="link-icon" src="https://chat.openai.com/favicon.ico" alt="ChatGPT">
-                <span class="link-text">Chatgpt</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://huggingface.co" target="_blank">
-                <img class="link-icon" src="https://huggingface.co/favicon.ico" alt="Hugging Face">
-                <span class="link-text">Huggingface</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.itdog.cn" target="_blank">
-                <i class="fas fa-network-wired link-icon"></i>
-                <span class="link-text">ITDOG - 在线ping</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://ping0.cc" target="_blank">
-                <i class="fas fa-database link-icon"></i>
-                <span class="link-text">Ping0</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="#" target="_blank">
-                <i class="fas fa-fingerprint link-icon"></i>
-                <span class="link-text">浏览器指纹</span>
-            </a>
-        </div>
-        
-        <!-- 第三行 -->
-        <div class="link-item">
-            <a href="https://ssss.nyc.mn" target="_blank">
-                <i class="fas fa-tachometer-alt link-icon"></i>
-                <span class="link-text">nezha面板</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://hoppscotch.io" target="_blank">
-                <img class="link-icon" src="https://discord.com/favicon.ico" alt="Discord">
-                <span class="link-text">Api测试</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://who.cx" target="_blank">
-                <i class="fas fa-globe link-icon"></i>
-                <span class="link-text">who.cx</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.domcomp.com" target="_blank">
-                <i class="fas fa-tags link-icon"></i>
-                <span class="link-text">域名比价</span>
-            </a>
-        </div>
-        
-        <div class="link-item">
-            <a href="https://www.nodeseek.com" target="_blank">
-                <i class="fas fa-server link-icon"></i>
-                <span class="link-text">NodeSeek</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://linux.do" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">Linux do</span>
-            </a>
-        </div>
-        
-        <!-- 第四行 -->
-        <div class="link-item">
-            <a href="https://music.gvrander.eu.org" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">在线音乐</span>
-            </a>           
-        </div>
-        <div class="link-item">
-            <a href="https://www.freereceivesms.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">免费接码</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://sublink.eooce.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">订阅转换</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://ssh.eooce.com" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">webssh</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://filebox.nnuu.nyc.mn" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">文件快递柜</span>
-            </a> 
-        </div>
-        <div class="link-item">
-            <a href="https://address.nnuu.nyc.mn" target="_blank">
-                <i class="fab fa-linux link-icon"></i>
-                <span class="link-text">真实地址生成</span>
-            </a> 
-        </div>
 
-        <!-- 版权 -->
-        <div class="foot_marker">
-        <a href="https://github.com/eooce" target="_blank">Powered by eooce</a>
+  <!-- 页眉 -->
+  <header>
+    <div class="container header-inner">
+      <div class="logo">丝绒<span>笔触</span></div>
+      <nav>
+        <a href="#">首页</a>
+        <a href="#">全部刷具</a>
+        <a href="#">关于我们</a>
+        <a href="#">联系</a>
+      </nav>
     </div>
+  </header>
 
-    <script>
-        document.querySelectorAll('.link-item:not(.empty)').forEach(item => {
-            const icon = item.querySelector('img.link-icon');
-            if (icon) {
-                icon.onerror = function() {
-                    this.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDJDNi40NzcgMiAyIDYuNDc3IDIgMTJzNC40NzcgMTAgMTAgMTAgMTAtNC40NzcgMTAtMTBTMTcuNTIzIDIgMTIgMnptMCAyYzQuNDE4IDAgOCAzLjU4MiA4IDhzLTMuNTgyIDgtOCA4LTgtMy41ODItOC04IDMuNTgyLTggOC04eiIgZmlsbD0iIzMzMyIvPjwvc3ZnPg==';
-                }
-            }
-        });
-    </script>
+  <!-- 主视觉区域 -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>以<strong>匠心</strong>勾勒<br>每一寸妆容</h1>
+        <p>源自专业化妆师的选择，纯手工打造，触感如丝，抓粉力出众。为你的日常妆容注入高级感。</p>
+        <a href="#" class="btn">探索全系列</a>
+      </div>
+      <div class="hero-image">
+        <div class="brush-icon">🖌️✨</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 产品展示 -->
+  <div class="container">
+    <h2 class="section-title">热门刷具</h2>
+    <div class="product-grid">
+      <!-- 产品 1: 粉底刷 -->
+      <div class="product-card">
+        <div class="brush-visual">
+          <span>🖌️</span><span class="brush-handle">⋮</span>
+        </div>
+        <h3>丝绒粉底刷</h3>
+        <p class="product-desc">高密度纤维毛，打造无痕底妆</p>
+        <div class="price">¥189 <small>起</small></div>
+      </div>
+      <!-- 产品 2: 眼影刷套装 -->
+      <div class="product-card">
+        <div class="brush-visual">
+          <span>🖌️</span><span>🖌️</span><span class="brush-handle">⋮</span>
+        </div>
+        <h3>精细眼影三件套</h3>
+        <p class="product-desc">晕染、细节、眼褶，一套搞定</p>
+        <div class="price">¥269 <small>起</small></div>
+      </div>
+      <!-- 产品 3: 散粉刷 -->
+      <div class="product-card">
+        <div class="brush-visual">
+          <span>🖌️</span><span class="brush-handle" style="font-size:4rem;">⋮</span>
+        </div>
+        <h3>大号散粉刷</h3>
+        <p class="product-desc">丰盈毛量，轻柔定妆不刺激</p>
+        <div class="price">¥159 <small>起</small></div>
+      </div>
+      <!-- 产品 4: 唇刷/遮瑕刷 -->
+      <div class="product-card">
+        <div class="brush-visual">
+          <span>🖌️</span><span class="brush-handle">⋮</span>
+        </div>
+        <h3>精准遮瑕刷</h3>
+        <p class="product-desc">扁平刷头，细节修饰利器</p>
+        <div class="price">¥89 <small>起</small></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 特色区域 -->
+  <div class="container">
+    <div class="features">
+      <div class="feature-item">
+        <div class="feature-icon">🌿</div>
+        <h4>纯素毛质</h4>
+        <p>零残忍，超柔软仿生纤维</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🖐️</div>
+        <h4>手工制作</h4>
+        <p>每一支都由匠人精心组装</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🪶</div>
+        <h4>轻盈握感</h4>
+        <p>桦木手柄，符合人体工学</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">✨</div>
+        <h4>无痕上妆</h4>
+        <p>毛峰细腻，均匀释粉</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 品牌故事/宣言 -->
+  <div class="container">
+    <div class="brand-story">
+      <p>“我们相信，好的工具能让化妆成为享受。每一支刷子都经过 27 道工序，只为在肌肤上留下温柔的触感。”</p>
+      <div class="signature">—— 丝绒笔触 创始人 · 林溪</div>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="copyright">© 2025 丝绒笔触 · 化妆刷艺术</div>
+      <div class="footer-links">
+        <a href="#">配送</a>
+        <a href="#">退换</a>
+        <a href="#">清洁指南</a>
+        <a href="#">隐私</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 纯HTML，无JavaScript，所有按钮均无功能，仅展示风格 -->
 </body>
 </html>
